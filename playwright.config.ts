@@ -21,10 +21,7 @@ export default defineConfig<TestOptions>({
 
   use: {
     globalsQaURL: 'https://www.globalsqa.com/demo-site/draganddrop/',
-    baseURL: process.env.DEV === '1' ? 'http://localhost:4201/'
-          : process.env.STAGING == '1' ? 'http://localhost:4202/'
-          : 'http://localhost:4200/',
-
+    baseURL: 'http://localhost:4200/',
     trace: 'on-first-retry',
     actionTimeout: 20000,
     navigationTimeout: 25000,
@@ -71,9 +68,9 @@ export default defineConfig<TestOptions>({
     }
   ],
 
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://localhost:4200/',
-  //   timeout: 120 * 1000,
-  // }
+  webServer: {
+    command: 'npm run start',
+    url: 'http://localhost:4200/',
+    timeout: 120 * 1000,
+  }
 });
