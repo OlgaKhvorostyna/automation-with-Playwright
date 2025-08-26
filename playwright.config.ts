@@ -13,14 +13,13 @@ export default defineConfig<TestOptions>({
 
   retries: 1,
   reporter: [
-    process.env.CI ? ["dot"] : ["list"],
-    [
-      '@argos-ci/playwright/reporter',
-      {
-        uploadToArgos: !!process.env.CI,
-        token: "glpat-ZFHrt4QtXPJ1ibsSp0roS286MQp1OmhzamszCw.01.121nbg5h0",
-      },
-    ],
+    // process.env.CI ? ["dot"] : ["list"],
+    // [
+    //   '@argos-ci/playwright/reporter',
+    //   {
+    //     uploadToArgos: !!process.env.CI,
+    //   },
+    // ],
     ['json', {outputFile: 'test-results/jsonReport.json'}],
     ['junit', {outputFile: 'test-results/junitReport.xml'}],
     // ['allure-playwright'],
